@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle Rental System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* Navbar */
+        nav {
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+
+            background: linear-gradient(
+                rgba(0,0,0,0.65),
+                rgba(0,0,0,0.65)
+            ),
+            url("images/car.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #111827;
+        }
+
+        .secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* Features */
+        .section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Vehicles */
+        .vehicle-card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .vehicle-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .vehicle-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #0ea5e9;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        /* Mobile */
+        @media(max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Vehicle<span>Rent</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="vehicles">Vehicles</a>
+            </li>
+
+            <li>
+                <a href="myBookings">My Bookings</a>
+            </li>
+
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Rent Your <span>Perfect Vehicle</span>
+            </h1>
+
+            <p>
+                Find affordable cars, SUVs and bikes
+                for your next journey.
+                Book your vehicle easily and quickly.
+            </p>
+
+            <a href="vehicles" class="btn primary">
+                View Vehicles
+            </a>
+
+            <a href="register.html" class="btn secondary">
+                Get Started
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="section" id="features">
+
+        <h2>
+            Why Choose Us?
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Wide Range
+                </h3>
+
+                <p>
+                    Choose from cars, SUVs and bikes
+                    according to your requirement.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    Affordable Price
+                </h3>
+
+                <p>
+                    Get vehicles at simple and
+                    affordable rental prices.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Easy Booking
+                </h3>
+
+                <p>
+                    Login, select your vehicle,
+                    enter number of days and book.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= POPULAR VEHICLES ================= -->
+
+    <section class="section">
+
+        <h2>
+            Popular Vehicles
+        </h2>
+
+        <div class="cards">
+
+            <!-- Swift -->
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Maruti Swift
+                </h3>
+
+                <p>
+                    Car
+                </p>
+
+                <div class="price">
+                    ₹1500 / Day
+                </div>
+
+                <a href="vehicles" class="btn primary">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Creta -->
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-icon">
+                    🚙
+                </div>
+
+                <h3>
+                    Hyundai Creta
+                </h3>
+
+                <p>
+                    SUV
+                </p>
+
+                <div class="price">
+                    ₹2500 / Day
+                </div>
+
+                <a href="vehicles" class="btn primary">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Activa -->
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-icon">
+                    🛵
+                </div>
+
+                <h3>
+                    Honda Activa
+                </h3>
+
+                <p>
+                    Bike
+                </p>
+
+                <div class="price">
+                    ₹500 / Day
+                </div>
+
+                <a href="vehicles" class="btn primary">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Thar -->
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-icon">
+                    🚙
+                </div>
+
+                <h3>
+                    Mahindra Thar
+                </h3>
+
+                <p>
+                    SUV
+                </p>
+
+                <div class="price">
+                    ₹3500 / Day
+                </div>
+
+                <a href="vehicles" class="btn primary">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="section">
+
+        <h2>
+            How It Works
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    1️⃣
+                </div>
+
+                <h3>
+                    Register
+                </h3>
+
+                <p>
+                    Create your account.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    2️⃣
+                </div>
+
+                <h3>
+                    Login
+                </h3>
+
+                <p>
+                    Login using your email
+                    and password.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    3️⃣
+                </div>
+
+                <h3>
+                    Select Vehicle
+                </h3>
+
+                <p>
+                    Choose an available vehicle.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    4️⃣
+                </div>
+
+                <h3>
+                    Book
+                </h3>
+
+                <p>
+                    Enter number of days
+                    and confirm booking.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Vehicle Rental System
+        </p>
+
+        <p>
+            Java Servlet | JDBC | MySQL
+        </p>
+
+    </footer>
+
+</body>
+</html>
